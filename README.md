@@ -1,4 +1,4 @@
-# Capstone: Development of an algorithm for automatic detection of meniscus tears in radiographic images of the knee
+# Title: Development of an algorithm for automatic detection of meniscus tears in radiographic images of the knee
 
 # Problem Statement
 Utilising machine learning models as a computational technique for the diagnosis of osteoarthritis is still relatively new. The aim in this project is to develop a machine learning algorithm, and to determine if the algorithm can identify meniscus tears by differentiating/ localizing abnormalities in radiographic images of the knee.
@@ -10,8 +10,3 @@ Osteoarthritis (OA) is the most prevalent medically treated arthritic condition 
 Data is from [MRNet](https://stanfordmlgroup.github.io/competitions/mrnet/). It consists of 1370 knee MRI exams performed at Stanford University Medical Center. The dataset contains 1,104 (80.6%) abnormal exams, with 319 (23.3%) ACL tears and 508 (37.1%) meniscal tears; labels were obtained through manual extraction from clinical reports.
 
 
-## Primary findings
-
-
-
-## Conclusion
