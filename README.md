@@ -9,4 +9,10 @@ Osteoarthritis (OA) is the most prevalent medically treated arthritic condition 
 ## Data and Model
 Data is from [MRNet](https://stanfordmlgroup.github.io/competitions/mrnet/). It consists of 1370 knee MRI exams performed at Stanford University Medical Center. The dataset contains 1,104 (80.6%) abnormal exams, with 319 (23.3%) ACL tears and 508 (37.1%) meniscal tears; labels were obtained through manual extraction from clinical reports.
 
+## Notebooks
+| modeling_notebook | model | dataset   | diagnosis |
+|-------------------|-------|-----------|-----------|
+| knee_ownmodel     | own   | extracted | all       |
+| meniscus_ownmodel | own   | extracted | meniscus  |
+| meniscus_vgg16    | vgg16 | extracted | mensicus  |
 
