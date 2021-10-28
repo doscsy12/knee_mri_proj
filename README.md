@@ -17,4 +17,5 @@ Data is from [MRNet](https://stanfordmlgroup.github.io/competitions/mrnet/). It 
 | meniscus_own_full_data | own      | full      | meniscus  |
 | meniscus_vgg16         | vgg16    | extracted | meniscus  |
 | meniscus_resnet50      | resnet50 | extracted | meniscus  |
+| meniscus_alexnet       | alexnet  | extracted | meniscus  |
 
