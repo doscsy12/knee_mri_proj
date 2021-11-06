@@ -46,13 +46,13 @@ Since the pretrained models were too complex for the dataset, I decided to build
 
 
 #### Model based on LeNet
-<img src="../images/ownmodel.png" width="250">
+![LeNet architecture](../images/ownmodel.png)
 
 
 
 
 #### Functional API
-<img src="../images/func_architecture.png" width="450">
+![functional architecture](../images/func_architecture.png)
 
 
 
