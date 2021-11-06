@@ -10,15 +10,15 @@ Osteoarthritis (OA) is the most prevalent medically treated arthritic condition 
 Data is from [MRNet](https://stanfordmlgroup.github.io/competitions/mrnet/). It consists of 1370 knee MRI exams performed at Stanford University Medical Center. The dataset contains 1,104 (80.6%) abnormal exams, with 319 (23.3%) ACL tears and 508 (37.1%) meniscal tears; labels were obtained through manual extraction from clinical reports.
 
 ## Notebooks
-| notebook            | model          | dataset   | diagnosis |
-|---------------------|----------------|-----------|-----------|
-| meniscus_resnet50   | resnet50       | extracted | meniscus  |
-| meniscus_vgg16      | vgg16          | extracted | meniscus  |
-| meniscus_alexnet    | alexnet        | extracted | meniscus  |
-| meniscus_ownmodel   | own            | one       | meniscus  |
-| kneeone_ownmodel    | own            | one       | all       |
-| meniscus_fulldata   | own            | fulldata  | meniscus  |
-| meniscus_functional | own functional | one       | meniscus  |
+| notebook            | model          | dataset         | diagnosis               |
+|---------------------|----------------|-----------------|-------------------------|
+| meniscus_resnet50   | resnet50       | extracted three | meniscus                |
+| meniscus_vgg16      | vgg16          | extracted three | meniscus                |
+| meniscus_alexnet    | alexnet        | extracted three | meniscus                |
+| meniscus_ownmodel   | own            | extracted one   | meniscus                |
+| kneeone_ownmodel    | own            | extracted one   | meniscus, acl, abnormal |
+| meniscus_fulldata   | own            | fulldata        | meniscus                |
+| meniscus_functional | own functional | extracted one   | meniscus                |
 
 ## Models
 ### Transfer Learning
