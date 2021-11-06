@@ -27,13 +27,13 @@ Transfer learning is a research problem in machine learning (ML) that focuses on
 In this project, I will discuss Resnet50 & VGG16. Keras offers many other [models](https://keras.io/api/applications/). 
 
 #### ResNet50
-![ResNet50 architecture](../images/ResNet-Architecture.jpg)
+![ResNet50 architecture](https://github.com/doscsy12/knee_mri_proj/blob/main/images/ResNet-Architecture.jpg)
 
 
 
 
 #### VGG16
-![VGG16 architecture](../images/vgg_architecture.png)
+![VGG16 architecture](https://github.com/doscsy12/knee_mri_proj/blob/main/images/vgg_architecture.png)
 
 
 
@@ -41,18 +41,18 @@ In this project, I will discuss Resnet50 & VGG16. Keras offers many other [model
 Since the pretrained models were too complex for the dataset, I decided to build my own models instead. The models should be relatively smaller than the previous pretrained models.  
 
 #### Adapted from AlexNet
-![AlexNet architecture](../images/alexnet.png)
+![AlexNet architecture](https://github.com/doscsy12/knee_mri_proj/blob/main/images/alexnet.png)
 
 
 
 #### Model based on LeNet
-![LeNet architecture](../images/ownmodel.png)
+![LeNet architecture](https://github.com/doscsy12/knee_mri_proj/blob/main/images/ownmodel.png)
 
 
 
 
 #### Functional API
-![functional architecture](../images/func_architecture.png)
+![functional architecture](https://github.com/doscsy12/knee_mri_proj/blob/main/images/func_architecture.png)
 
 
 
