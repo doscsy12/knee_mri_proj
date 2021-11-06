@@ -27,13 +27,13 @@ Transfer learning is a research problem in machine learning (ML) that focuses on
 In this project, I will discuss Resnet50 & VGG16. Keras offers many other [models](https://keras.io/api/applications/). 
 
 #### ResNet50
-![ResNet50 architecture](https://github.com/doscsy12/knee_mri_proj/blob/main/images/ResNet-Architecture.jpg)
+![ResNet50 architecture](https://github.com/doscsy12/knee_mri_proj/blob/main/images/resnet.png)
 
 
 
 
 #### VGG16
-![VGG16 architecture](https://github.com/doscsy12/knee_mri_proj/blob/main/images/vgg_architecture.png)
+![VGG16 architecture](https://github.com/doscsy12/knee_mri_proj/blob/main/images/vgg16.png)
 
 
 
