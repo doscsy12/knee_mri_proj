@@ -9,6 +9,9 @@ Osteoarthritis (OA) is the most prevalent medically treated arthritic condition 
 ## Data and Model
 Data is from [MRNet](https://stanfordmlgroup.github.io/competitions/mrnet/). It consists of 1370 knee MRI exams performed at Stanford University Medical Center. The dataset contains 1,104 (80.6%) abnormal exams, with 319 (23.3%) ACL tears and 508 (37.1%) meniscal tears; labels were obtained through manual extraction from clinical reports. The original dataset is 5D tensor with shape (batch_shape, *s*, conv_dim1, conv_dim2, channel), where *s* is the number of slices per scan. The training set consists of 1130 MRI images from coronal, sagittal and axial planes. The validation set consists of 120 images from coronal, sagittal and axial planes. 
 
+<br> Metrics were accuracy and precision. Accuracy was used to determine the overall performance of the model. 
+<br> MRI scanning is costly and requires a long scanning time. A patient would only be sent for an MRI scan, if further imaging evaluation is required. Thus, precision was used as another metric since I need to know how many of the positives were true positives. Due to time and costs, the more false positives there are, the more costly each true positive is. 
+
 ## Notebooks
 | notebook            | model          | dataset         | diagnosis               |
 |---------------------|----------------|-----------------|-------------------------|
@@ -39,7 +42,7 @@ In this project, I will discuss Resnet50 & VGG16. Keras offers many other [model
 <br> Similarly to ResNet, the input shape for VGG16 should be in 4D tensor with shape (batch_shape, conv_dim1, conv_dim2, channel). Thus, middle three images were extracted from each MRI scan, and used as inputs into the model. Only the last convolutional block of VGG16 and added fully-connected layers were trained. Other layers were frozen. Despite having only 23 layers, there was a tendency to overfit. Kernel_regularizer, batch normalisation and dropout were tuned to minimise overfitting. However, a GlobalAveragePooling layer with a Dropout of 0.6 worked well to minimise overfitting. Despite this, average accuracy remains poor, at approximately 0.56-0.58 for all three planes. Due to the tendency to overfit, VGG16 was also considered too complex for the dataset.
 
 ### Own models
-Since the pretrained models were too complex for the dataset, I decided to build my own models instead. The models should be relatively 'simplier' than the previous pretrained models. There are, however, several challenges in building a model from scratch. Firstly, 1130 is too small a dataset for training. Secondly, a self-built model would usually result in a lower performance. 
+Since the pretrained models were too complex for the dataset, demonstrated a tendency to overfit, and I am limited by what I can do to improve the dataset, I decided to build my own models instead. The models should be relatively 'simplier' than the previous pretrained models. There are, however, several challenges in building a model from scratch. Firstly, 1130 is too small a dataset for training. Secondly, a self-built model would usually result in a lower performance. 
 
 #### Adapted from AlexNet
 ![AlexNet architecture](https://github.com/doscsy12/knee_mri_proj/blob/main/images/alexnet.png)
@@ -49,12 +52,16 @@ Since the pretrained models were too complex for the dataset, I decided to build
 
 #### Model based on LeNet
 ![LeNet architecture](https://github.com/doscsy12/knee_mri_proj/blob/main/images/ownmodel.png)
-
-
+<br> This model is a simple stack of two convolution layers with a ReLU activation and followed by max-pooling layers. This is very similar to the architectures that Yann LeCun built in the 1990s for image classification (with the exception of ReLU) ([LeCun et al., 1998](http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf)). In addition, three fully-connected layers were added, which ends with a single unit and a sigmoid activation, for a binary classification. I made LeNet even smaller by reducing the number of neurons in the connected layers. 
+<br> 
+<br> To minimise overfitting, kernel_regularization, batch normalisation and dropout were tuned. To actually control the learning rate of the optimser, sgd with a slow learning rate and momentum were selected based on previous experience with AlexNet. Geometric mean of the accuracy of the three models was 0.575, and mean precision was 0.667. 
+<br>
+<br> **Stacked classifier**
+<br> Predictions from each model (of each plane) was combined/stacked and become new features for training another classifier to compute the final prediction. This acts as a stacked generalization where the outputs of the models were used an inputs into another classifier. Logistic regression model was used since each plane would be given the best weight. The plane with the highest weightage is the axial plane, followed by the coronal plane, and then the sagittal plane. Accuracy increased to 0.60, but precision decreased to 0.41. 
 
 
 #### Functional API
 ![functional architecture](https://github.com/doscsy12/knee_mri_proj/blob/main/images/func_architecture.png)
-
+<br> 
 
 
