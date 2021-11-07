@@ -59,9 +59,9 @@ Since the pretrained models were too complex for the dataset, demonstrated a ten
 <br> **Stacked classifier**
 <br> Predictions from each model (of each plane) was combined/stacked and become new features for training another classifier to compute the final prediction. This acts as a stacked generalization where the outputs of the models were used an inputs into another classifier. Logistic regression model was used since each plane would be given the best weight. The plane with the highest weightage is the axial plane, followed by the coronal plane, and then the sagittal plane. Accuracy increased to 0.60, but precision decreased to 0.41. 
 
-
 #### Functional API
 ![functional architecture](https://github.com/doscsy12/knee_mri_proj/blob/main/images/func_architecture.png)
-<br> 
+<br> The Keras functional API was explored, since it can handle models with multiple inputs. Three inputs (one from each plane) was used for three parallel models, leading to one output. To minimise overfitting, kernel_regularization, batch normalisation and dropout were tuned. Batch size and sgd's learning rate were also explored. Unlike the stacked classifier with logistic regression, each plane was assumed to have equal weightage. Accuracy was similar to the geometric mean of previous models at 0.575. However, precision significantly increased to 1.0. 
+ 
 
 
