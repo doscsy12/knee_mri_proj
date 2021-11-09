@@ -20,8 +20,8 @@ Data is from [MRNet](https://stanfordmlgroup.github.io/competitions/mrnet/). It 
 | meniscus_alexnet    | alexnet        | extracted three | meniscus                |
 | meniscus_ownmodel   | own            | extracted one   | meniscus                |
 | kneeone_ownmodel    | own            | extracted one   | meniscus, acl, abnormal |
-| meniscus_fulldata   | own            | fulldata        | meniscus                |
-| meniscus_functional | own functional | extracted one   | meniscus                |
+| meniscus_fulldata   | own            | full data       | meniscus                |
+| meniscus_functional | functional     | extracted one   | meniscus                |
 
 ## Models
 ### Transfer Learning
